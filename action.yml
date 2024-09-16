@@ -1,4 +1,4 @@
-name: substring-action
+name: substring-action-updated
 description: "Retrieves a substring from the input and outputs it to the specified variable."
 
 branding:
