@@ -7,18 +7,21 @@ jobs:
   test_and_update_dist:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.head_ref }}
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
         with:
-          token: ${{ secrets.PAT }}
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: '16'
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+
       - run: npm ci
       - run: npm test
       # if all above passes then create the dist and push it to ensure that
       # the latest dist code is available
       - run: npm run ncc
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5.0.1
         with:
           commit_message: Updated distrubition.

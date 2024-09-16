@@ -1,3 +1,7 @@
+### This is a fork of bhowell2/github-substring-action with minor updates
+* **Fixes documentation issue for GitHub Action plugin compatibility. Credit [uwx/github-substring-action](https://github.com/uwx/github-substring-action)**
+* **Node.js updated to v20**
+
 # Substring Action  
 Retrieves a substring of some input and sets the specified output variable.
 This variable can be accessed via `steps.<step_id>.outputs.<output_name>`.
@@ -26,7 +30,7 @@ If more than one of the substring inputs is provided, the order of precedence is
 ## Example Usage
 ```yaml
 steps:
-  - uses: bhowell2/github-substring-action@1.0.2
+  - uses: agracio/github-substring-action@1.0.0
     id: one
     with:
       value: "abc123"
@@ -36,7 +40,7 @@ steps:
 
 ```yaml
 steps:
-  - uses: bhowell2/github-substring-action@1.0.2
+  - uses: agracio/github-substring-action@1.0.0
     id: two
     with:
       value: "abc123"
@@ -47,7 +51,7 @@ steps:
 
 ```yaml
 steps:
-  - uses: bhowell2/github-substring-action@1.0.2
+  - uses: agracio/github-substring-action@1.0.0
     id: three
     with:
       value: "abc123"
@@ -57,7 +61,7 @@ steps:
 
 ```yaml
 steps:
-  - uses: bhowell2/github-substring-action@1.0.2
+  - uses: agracio/github-substring-action@1.0.0
     id: four
     with:
       value: "abc123"
